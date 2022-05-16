@@ -1,0 +1,41 @@
+﻿@model List<Course>
+
+<section class="courses">
+    <div class="wrapper courses__wrapper">
+        <div class="title-image courses__title-image">
+            <img src="./images/maxdpo.jpg" />
+        </div>
+        <div class="courses-list courses__courses-list">
+            <div class="often-question">
+                <img src="./icons/icon.svg" />
+                <span>Какой курс Вас интересует?</span>
+            </div>
+            <h2 class="courses-list__title">Доступные курсы</h2>
+            @foreach (Course course in Model)
+            {
+                <div class="courses-list__item">
+                    <div class="courses-list__title">
+                        <img src="./icons/course.svg" />
+                        <h3>Специалист ответственный по  БДД</h3>
+                    </div>
+                    <div class="people courses-list__people">
+                        <span class="people__teacher">
+                            Учитель:
+                            <a href="./profile">@course.Teacher.User.UserName</a>
+                        </span>
+                        @foreach (User user in course.Users)
+                        {
+                            <span class="people__student">
+                                Студент:
+                                <a href="./profile">@user.UserName</a>
+                            </span>
+                        }
+                    </div>
+                    <div class="description courses-list__description">
+                        <p>@course.Description</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

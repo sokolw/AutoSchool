@@ -1,0 +1,14 @@
+.files-list {
+  border: 1px solid #a5a5a7;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+  width: 90%;
+  //grids
+  grid-area: filesList;
+  justify-self: center;
+  height: 150px;
+  button img {
+    width: 20px;
+    height: 20px;
+  }
+}

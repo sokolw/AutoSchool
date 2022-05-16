@@ -1,0 +1,12 @@
+.dashboard {
+  padding: 40px 0;
+}
+
+.dashboard__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  row-gap: 10px;
+  grid-template-areas:
+        "profile coursesList"
+        "filesList coursesList";
+}

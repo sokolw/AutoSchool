@@ -1,0 +1,29 @@
+﻿<header>
+    <div class="wrapper header__wrapper">
+        <nav class="navigation header__navigation">
+            <ul class="navigation__list">
+                <li class="navigation__item"><a class="navigation__link" href="https://apl70.ru/">Main page</a></li>
+                <li class="navigation__item"><a class="navigation__link" asp-area="" asp-controller="Dashboard" asp-action="Index" asp-route-id="">Dashboard</a></li>
+                <li class="navigation__item"><a class="navigation__link" asp-area="" asp-controller="Courses" asp-action="Index">Courses</a></li>
+            </ul>
+        </nav>
+        <div class="header__right">
+            <div class="search-box header__search-box">
+                <form class="d-flex">
+                    <img src="./icons/search.svg" />
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+            <div class="header__buttons">
+                <div class="button-setting">
+                    <button type="button" class="btn btn-primary"><img src="./icons/settings.svg" /></button>
+                </div>
+                <div class="button-logout">
+                    <button type="button" class="btn btn-primary"><img src="./icons/logout.png" /></button>
+                </div>
+            </div>
+            <partial name="_LoginPartial" />
+        </div>
+    </div>
+</header>

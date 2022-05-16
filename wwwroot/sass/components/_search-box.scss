@@ -1,0 +1,15 @@
+.search-box{
+  form {
+    display: flex;
+    gap: 5px;
+  }
+  button {
+    background-color: #142b52;
+    color: white;
+  }
+
+  button:hover {
+    background-color: darken(#142b52, 40%);
+    color: white;
+  }
+}

@@ -65,6 +65,7 @@ namespace AutoSchool
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
+                //endpoints.MapControllerRoute("default", "{controller=Dashboard}/{action=Index}/{id?}");
             });
         }
     }

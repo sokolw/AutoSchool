@@ -1,0 +1,27 @@
+.header {
+  height: 80px;
+  background-color: #f0f0f0;
+}
+
+.header__wrapper {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+
+  .header__right {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+}
+
+.header__buttons {
+  display: flex;
+  gap: 5px;
+  img {
+    width: 20px;
+    height: 20px;
+  }
+
+}
