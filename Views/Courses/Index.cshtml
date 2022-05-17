@@ -23,11 +23,11 @@
                             Учитель:
                             <a href="./profile">@course.Teacher.User.UserName</a>
                         </span>
-                        @foreach (User user in course.Users)
+                        @foreach (var student in course.Students)
                         {
                             <span class="people__student">
                                 Студент:
-                                <a href="./profile">@user.UserName</a>
+                                <a href="./profile">@student.User.UserName</a>
                             </span>
                         }
                     </div>

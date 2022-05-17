@@ -1,4 +1,5 @@
 ﻿using AutoSchool.Data;
+using AutoSchool.Models.Tables;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
@@ -16,11 +17,13 @@ namespace AutoSchool.Controllers
 
         public IActionResult Index()
         {
-            var temp = applicationDbContext.Courses
-                .Include(a => a.Users)
-                .Include(a => a.Teacher)
-                    .ThenInclude(a => a.User)
-                .ToList();
+            IQueryable<Course> query = applicationDbContext.Courses
+                .Include(a => a.Students)
+                    .ThenInclude(z => z.User)
+                .Include(b => b.Teacher)
+                    .ThenInclude(x => x.User);
+
+            var temp = query.ToList();
 
             return View(temp);
         }

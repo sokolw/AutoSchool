@@ -1,5 +1,6 @@
 ﻿using System;
 using AutoSchool.Data;
+using AutoSchool.Models.Tables;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;

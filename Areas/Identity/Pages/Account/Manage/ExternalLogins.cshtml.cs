@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoSchool.Models.Tables;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -11,12 +12,12 @@ namespace AutoSchool.Areas.Identity.Pages.Account.Manage
 {
     public class ExternalLoginsModel : PageModel
     {
-        private readonly UserManager<IdentityUser> _userManager;
-        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly UserManager<User> _userManager;
+        private readonly SignInManager<User> _signInManager;
 
         public ExternalLoginsModel(
-            UserManager<IdentityUser> userManager,
-            SignInManager<IdentityUser> signInManager)
+            UserManager<User> userManager,
+            SignInManager<User> signInManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -36,7 +37,7 @@ namespace AutoSchool.Areas.Identity.Pages.Account.Manage
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
             {
-                return NotFound($"Unable to load user with ID 'user.Id'.");
+                return NotFound($"Unable to load user with ID '{user.Id}'.");
             }
 
             CurrentLogins = await _userManager.GetLoginsAsync(user);
@@ -52,7 +53,7 @@ namespace AutoSchool.Areas.Identity.Pages.Account.Manage
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
             {
-                return NotFound($"Unable to load user with ID 'user.Id'.");
+                return NotFound($"Unable to load user with ID '{user.Id}'.");
             }
 
             var result = await _userManager.RemoveLoginAsync(user, loginProvider, providerKey);
@@ -71,10 +72,9 @@ namespace AutoSchool.Areas.Identity.Pages.Account.Manage
         {
             // Clear the existing external cookie to ensure a clean login process
             await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
-
             // Request a redirect to the external login provider to link a login for the current user
             var redirectUrl = Url.Page("./ExternalLogins", pageHandler: "LinkLoginCallback");
-            var properties = _signInManager.ConfigureExternalAuthenticationProperties(provider, redirectUrl, _userManager.GetUserId(User));
+            var properties = _signInManager.ConfigureExternalAuthenticationProperties(provider, redirectUrl,  _userManager.GetUserId(User));
             return new ChallengeResult(provider, properties);
         }
 
@@ -83,7 +83,7 @@ namespace AutoSchool.Areas.Identity.Pages.Account.Manage
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
             {
-                return NotFound($"Unable to load user with ID 'user.Id'.");
+                return NotFound($"Unable to load user with ID '{user.Id}'.");
             }
 
             var info = await _signInManager.GetExternalLoginInfoAsync(user.Id);
