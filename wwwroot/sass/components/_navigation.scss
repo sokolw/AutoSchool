@@ -17,13 +17,13 @@
     align-items: center;
     .navigation__link {
       text-decoration: none;
-      color: #142b52;
+      color: $color-primary-light;
       font-size: 20px;
     }
   }
 
   .navigation__item:hover {
-    border-bottom: 5px solid #142b52;
+    border-bottom: 5px solid $color-primary-light;
     cursor: pointer;
   }
 }

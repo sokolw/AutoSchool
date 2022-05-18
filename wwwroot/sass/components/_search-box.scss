@@ -4,12 +4,12 @@
     gap: 5px;
   }
   button {
-    background-color: #142b52;
-    color: white;
+    background-color: $color-primary-light;
+    //color: white;
   }
 
   button:hover {
-    background-color: darken(#142b52, 40%);
+    background-color: darken($color-primary-light, 60%);
     color: white;
   }
 }

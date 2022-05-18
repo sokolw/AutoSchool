@@ -1,3 +1,5 @@
+@import 'abstracts/variables';
+
 @import 'base/normalize';
 @import 'base/supplement';
 @import 'base/typography';
@@ -8,6 +10,7 @@
 @import 'layout/courses';
 @import 'layout/footer';
 @import 'layout/course';
+@import 'layout/test';
 
 @import 'components/navigation';
 @import 'components/search-box';

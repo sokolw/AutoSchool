@@ -6,17 +6,15 @@
             <img src="./images/maxdpo.jpg" />
         </div>
         <div class="courses-list courses__courses-list">
-            <div class="often-question">
-                <img src="./icons/icon.svg" />
-                <span>Какой курс Вас интересует?</span>
-            </div>
             <h2 class="courses-list__title">Доступные курсы</h2>
             @foreach (Course course in Model)
             {
                 <div class="courses-list__item">
-                    <div class="courses-list__title">
-                        <img src="./icons/course.svg" />
-                        <h3><a asp-area="" asp-controller="Courses" asp-action="Course">Специалист ответственный по  БДД</a></h3>
+                    <div class="courses-list__item-title">
+                        <a asp-area="" asp-controller="Courses" asp-action="Course">
+                            <img src="./icons/course.svg" />
+                            <h3>Специалист ответственный по  БДД</h3>
+                        </a>
                     </div>
                     <div class="people courses-list__people">
                         <span class="people__teacher">
@@ -36,6 +34,63 @@
                     </div>
                 </div>
             }
+
+            @*temp foor test styles*@
+            @foreach (Course course in Model)
+            {
+                <div class="courses-list__item">
+                    <div class="courses-list__item-title">
+                        <a asp-area="" asp-controller="Courses" asp-action="Course">
+                            <img src="./icons/course.svg" />
+                            <h3>Специалист ответственный по  БДД</h3>
+                        </a>
+                    </div>
+                    <div class="people courses-list__people">
+                        <span class="people__teacher">
+                            Учитель:
+                            <a href="./profile">@course.Teacher.User.UserName</a>
+                        </span>
+                        @foreach (var student in course.Students)
+                        {
+                            <span class="people__student">
+                                Студент:
+                                <a href="./profile">@student.User.UserName</a>
+                            </span>
+                        }
+                    </div>
+                    <div class="description courses-list__description">
+                        <p>@course.Description</p>
+                    </div>
+                </div>
+            }
+            @foreach (Course course in Model)
+            {
+                <div class="courses-list__item">
+                    <div class="courses-list__item-title">
+                        <a asp-area="" asp-controller="Courses" asp-action="Course">
+                            <img src="./icons/course.svg" />
+                            <h3>Специалист ответственный по  БДД</h3>
+                        </a>
+                    </div>
+                    <div class="people courses-list__people">
+                        <span class="people__teacher">
+                            Учитель:
+                            <a href="./profile">@course.Teacher.User.UserName</a>
+                        </span>
+                        @foreach (var student in course.Students)
+                        {
+                            <span class="people__student">
+                                Студент:
+                                <a href="./profile">@student.User.UserName</a>
+                            </span>
+                        }
+                    </div>
+                    <div class="description courses-list__description">
+                        <p>@course.Description</p>
+                    </div>
+                </div>
+            }
+            @*end temp foor test styles*@
         </div>
     </div>
 </section>
