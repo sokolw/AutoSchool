@@ -349,6 +349,31 @@ img {
   object-fit: cover;
 }
 
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+h4 {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
 .link {
   text-decoration-line: none;
 }
@@ -427,6 +452,40 @@ img {
 
 .footer {
   position: static;
+}
+
+.course {
+  padding-top: 40px;
+}
+
+.course__title {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+.theme-list__theme-item {
+  margin-bottom: 25px;
+}
+.theme-list__theme-item .theme-item__title {
+  margin-bottom: 15px;
+}
+.theme-list__theme-item .theme-item__lecture {
+  width: max-content;
+  margin-bottom: 10px;
+  margin-left: 15px;
+}
+.theme-list__theme-item .theme-item__lecture a {
+  display: flex;
+  align-items: center;
+}
+.theme-list__theme-item .theme-item__test {
+  width: max-content;
+  margin-bottom: 10px;
+  margin-left: 15px;
+}
+.theme-list__theme-item .theme-item__test a {
+  display: flex;
+  align-items: center;
 }
 
 .navigation {

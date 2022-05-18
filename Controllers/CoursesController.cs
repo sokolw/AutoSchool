@@ -27,5 +27,15 @@ namespace AutoSchool.Controllers
 
             return View(temp);
         }
+
+        public IActionResult Course()
+        {
+            return View();
+        }
+
+        public IActionResult Lecture()
+        {
+            return View();
+        }
     }
 }
