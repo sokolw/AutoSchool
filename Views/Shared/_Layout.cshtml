@@ -5,7 +5,17 @@
     @await Html.PartialAsync("CssPartial")
 </head>
 <body>
-    @await Html.PartialAsync("HeaderPartial")
+    @using Microsoft.AspNetCore.Identity
+    @inject SignInManager<User> SignInManager
+    @if (!SignInManager.IsSignedIn(User))
+    {
+        <partial name="_LoginPartial" />
+    }
+    else
+    {
+        @await Html.PartialAsync("HeaderPartial")
+    }
+    
     <main class="main">
         @RenderBody()
     </main>
